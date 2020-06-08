@@ -8,13 +8,29 @@ class WelcomePage extends StatelessWidget {
       backgroundColor: Colors.blueGrey[600],
       body: SafeArea(
         child: Container(
-          padding: EdgeInsets.only(left:60,right:60),
+          padding: EdgeInsets.only(left: 60, right: 60),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               Column(
                 children: <Widget>[
-                  SizedBox(height: 250.0,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: <Widget>[
+                    Container(
+                      width: 180.0,
+                      padding: EdgeInsets.only(left: 20, right: 20),
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(30)),
+                      child: Image.asset('assets/images/logo.jpg'),
+                    ),
+                    Container(
+                        child: SizedBox(
+                      height: 250.0,
+                    )),
+                  ]),
                   Text(
                     'Welcome',
                     style: TextStyle(
@@ -27,7 +43,7 @@ class WelcomePage extends StatelessWidget {
                     'How do you want to proceed?',
                     style: TextStyle(fontSize: 20.0, color: Colors.grey),
                   ),
-                  SizedBox(height:100.0)
+                  SizedBox(height: 100.0)
                 ],
               ),
               SizedBox(
@@ -38,15 +54,17 @@ class WelcomePage extends StatelessWidget {
                   fontsize: 20.0,
                 ),
               ),
-              SizedBox(height:10.0),
-              Text('OR',style: TextStyle(fontSize: 20,color: Colors.white),),
-              SizedBox(height:10.0),
+              SizedBox(height: 10.0),
+              Text(
+                'OR',
+                style: TextStyle(fontSize: 20, color: Colors.white),
+              ),
+              SizedBox(height: 10.0),
               RoundedButton(
                 text: 'CREATE AN ACCOUNT',
                 fontsize: 20.0,
                 color: Colors.pinkAccent[400],
               ),
-              
             ],
           ),
         ),
