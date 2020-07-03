@@ -1,11 +1,13 @@
 import 'package:chuuse/custom_widgets/Rounded_Button.dart';
 import 'package:flutter/material.dart';
 
+import 'loginpage.dart';
+
 class WelcomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueGrey[600],
+      backgroundColor: Color.fromRGBO(0x36, 0x4f, 0x6b, 1),
       body: SafeArea(
         child: Container(
           padding: EdgeInsets.only(left: 60, right: 60),
@@ -41,7 +43,7 @@ class WelcomePage extends StatelessWidget {
                   SizedBox(height: 10.0),
                   Text(
                     'How do you want to proceed?',
-                    style: TextStyle(fontSize: 20.0, color: Colors.grey),
+                    style: TextStyle(fontSize: 20.0, color: Colors.white),
                   ),
                   SizedBox(height: 100.0)
                 ],
@@ -50,7 +52,13 @@ class WelcomePage extends StatelessWidget {
                 width: MediaQuery.of(context).size.width * 4,
                 child: RoundedButton(
                   text: 'LOGIN',
-                  color: Colors.teal,
+                  press: (){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => LoginPage())
+                    );
+                  },
+                  color: Color.fromRGBO(0x25, 0xbd, 0xc9, 1),
                   fontsize: 20.0,
                 ),
               ),
@@ -63,7 +71,7 @@ class WelcomePage extends StatelessWidget {
               RoundedButton(
                 text: 'CREATE AN ACCOUNT',
                 fontsize: 20.0,
-                color: Colors.pinkAccent[400],
+                color: Color.fromRGBO(0xe0, 0x1d, 0x65, 1),
               ),
             ],
           ),
